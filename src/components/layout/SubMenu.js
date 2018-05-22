@@ -1,10 +1,28 @@
 import React from "react";
 import { Paper, Tabs, Tab } from "@material-ui/core";
-import { Router, Link } from 'react-router-dom';
-class Footer extends React.Component {
+import { Link } from "react-router-dom";
+class SubMenu extends React.Component {
   state = {
     value: 0
   };
+
+  componentDidMount() {
+    switch (this.props.location.pathname) {
+      case "/":
+        this.setState({ value: 0 })
+        break;
+      case "/projects":
+        this.setState({ value: 1 })
+        break;
+      case "/contact":
+        this.setState({ value: 2 })
+        break;
+      default:
+        this.setState({ value: 0 })
+        break;
+    }
+  }
+
   handleChange = (event, value) => {
     this.setState({ value });
   };
@@ -20,7 +38,7 @@ class Footer extends React.Component {
           fullWidth
         >
           <Tab component={Link} to="/" label="Sobre mi" />
-          <Tab component={Link} to="/blog" label="Blog" />
+          <Tab component={Link} to="/projects" label="Proyectos" />
           <Tab component={Link} to="/contact" label="Contacto" />
         </Tabs>
       </Paper>
@@ -28,4 +46,4 @@ class Footer extends React.Component {
   }
 }
 
-export default Footer;
+export default SubMenu;
