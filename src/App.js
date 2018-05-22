@@ -10,17 +10,17 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 class App extends Component {
   render() {
     return (
-      <Fragment>
-        <Navbar />
-        <Router>
+      <Router>
+        <Fragment>
+          <Navbar />
           <Switch>
             <Route exact path="/" component={About} />
             <Route path="/blog" component={Blog} />
             <Route path="/contact" component={Contact} />
           </Switch>
-        </Router>
-        <Footer />
-      </Fragment>
+          <Footer />
+        </Fragment>
+      </Router>
     );
   }
 }

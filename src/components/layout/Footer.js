@@ -1,6 +1,6 @@
 import React from "react";
-import { Paper, Tabs } from "@material-ui/core";
-import Tab from "@material-ui/core/Tab";
+import { Paper, Tabs, Tab } from "@material-ui/core";
+import { Router, Link } from 'react-router-dom';
 class Footer extends React.Component {
   state = {
     value: 0
@@ -17,10 +17,11 @@ class Footer extends React.Component {
           indicatorColor="primary"
           textColor="primary"
           centered
+          fullWidth
         >
-          <Tab label="Sobre mi" />
-          <Tab label="Blog" />
-          <Tab label="Contacto" />
+          <Tab component={Link} to="/" label="Sobre mi" />
+          <Tab component={Link} to="/blog" label="Blog" />
+          <Tab component={Link} to="/contact" label="Contacto" />
         </Tabs>
       </Paper>
     );
