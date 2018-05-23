@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import "./App.css";
 import About from "./components/About/About";
-import Navbar from "./components/layout/Navbar";
+import Toolbar from "./components/layout/Toolbar";
 import SubMenu from "./components/layout/SubMenu";
 import Projects from "./components/Projects/Projects";
 import Contact from "./components/Contact/Contact";
@@ -9,7 +9,7 @@ import { BrowserRouter as Router, Route, Switch, withRouter } from "react-router
 const SomeComponent = withRouter(props => <SubMenu {...props}/>);
 class App extends Component {
   state = {
-    route: ""
+    blogName: "Rodrigo Bustamante"
   };
   componentDidMount() {
     
@@ -18,10 +18,10 @@ class App extends Component {
     return (
       <Router>
         <Fragment>
-          <Navbar />
+          <Toolbar name={this.state.blogName} />
           <SomeComponent />
           <Switch>
-            <Route exact path="/" component={About} />
+            <Route exact path="/" render={()=><About name={this.state.blogName} />} />
             <Route path="/projects" component={Projects} />
             <Route path="/contact" component={Contact} />
           </Switch>
