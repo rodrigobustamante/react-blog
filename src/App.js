@@ -24,23 +24,22 @@ class App extends Component {
   };
   componentDidMount() { }
   render() {
-    console.log(this.state);
     return (
       <Router>
         <Fragment>
           <Toolbar me={this.state.me} />
           <SomeComponent />
-          <div className="container">
-            <Switch>
-              <Route
-                exact
-                path="/"
-                render={() => <About me={this.state.me} />}
-              />
-              <Route path="/projects" component={Projects} />
-              <Route path="/contact" component={Contact} />
-            </Switch>
-          </div>
+
+          <Switch>
+            <Route
+              exact
+              path="/"
+              render={() => <About me={this.state.me} />}
+            />
+            <Route path="/projects" component={Projects} />
+            <Route path="/contact" component={Contact} />
+          </Switch>
+
         </Fragment>
       </Router>
     );
