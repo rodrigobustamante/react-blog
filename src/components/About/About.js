@@ -2,6 +2,12 @@ import React, { Fragment } from "react";
 import Parallax from "./Parallax";
 import TitleCard from './TitleCard';
 
+const style = {
+  container: {
+    padding: 40,
+  }
+}
+
 const studies = [
   {
     title: "Enseñansa Básica",
@@ -34,7 +40,10 @@ class About extends React.Component {
     return (
       <Fragment>
         <Parallax name={this.props.me.name} career={this.props.me.career} />
-        <TitleCard title="Mis Educación" />
+        <div style={style.container}>
+          <TitleCard title="Mis Educación" />
+          <h1>Hola</h1>
+        </div>
       </Fragment>
     );
   }
