@@ -29,7 +29,7 @@ const studies = [
   {
     title: "Educación Superior",
     image:  superior,
-    institutions: [{ name: "Instituto Profesional Duoc UC" }]
+    institutions: [{ name: "Instituto Profesional Duoc UC, Sede Antonio Varas" }]
   }
 ];
 class About extends React.Component {
