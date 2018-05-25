@@ -1,9 +1,41 @@
-import React from "react";
-import Parallax from './Parallax';
+import React, { Fragment } from "react";
+import Parallax from "./Parallax";
+import TitleCard from './TitleCard';
+
+const studies = [
+  {
+    title: "Enseñansa Básica",
+    image: "",
+    institutions: [
+      "Colegio Leonardo Da Vinci",
+      "Colegio Nuestra Señora del Rosario"
+    ],
+  },
+  {
+    title: "Enseñansa Media",
+    image: "",
+    institutions: "Colegio Nuestra Señora del Rosario"
+  },
+  {
+    title: "Educación Superior",
+    image: "",
+    institutions: "Instituto Profesional Duoc UC"
+  }
+];
 class About extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      studies
+    }
+  }
+
   render() {
     return (
-      <Parallax name={this.props.me.name} career={this.props.me.career} />
+      <Fragment>
+        <Parallax name={this.props.me.name} career={this.props.me.career} />
+        <TitleCard title="Mis Educación" />
+      </Fragment>
     );
   }
 }
