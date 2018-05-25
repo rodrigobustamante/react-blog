@@ -15,6 +15,9 @@ const style = {
   },
   height: {
     height: 500,
+  },
+  text:{
+    color: "black",
   }
 };
 const insideStyles = {
@@ -31,10 +34,10 @@ class Parallax extends React.Component {
         <div style={style.height}>
           <div style={insideStyles}>
             <Paper style={style.paddingCard} elevation={10}>
-              <Typography align="center" variant="display2">
+              <Typography style={style.text} align="center" variant="display2">
                 {this.props.name}
               </Typography>
-              <Typography align="center" variant="display1">
+              <Typography style={style.text} align="center" variant="display1">
                 {this.props.career}
               </Typography>
             </Paper>
